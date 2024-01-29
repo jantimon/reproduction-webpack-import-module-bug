@@ -1,20 +1,3 @@
-Reproduction:
-
-```
-npm i
-node server.mjs
-```
-
-Error:
-
-![error screenshot](https://github.com/jantimon/reproduction-webpack-import-module-bug/assets/4113649/17735e8e-5b63-4619-ba17-cb378ee73be8)
-
-
-Possible fix:
-
-Add `require` and `module` to compilation.hooks.executeModule.tap(PLUGIN_NAME, (options, context) => { ... }):
-
-```diff
 diff --git a/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js b/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js
 index 4249a2f..31cd251 100644
 --- a/node_modules/webpack/lib/javascript/JavascriptModulesPlugin.js
@@ -43,4 +26,3 @@ index 4249a2f..31cd251 100644
  						);
  					} catch (e) {
  						e.stack += printGeneratedCodeForStack(
-```
