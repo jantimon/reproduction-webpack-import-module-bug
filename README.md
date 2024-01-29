@@ -7,8 +7,7 @@ npm run dev
 
 ## Error:
 
-![error screenshot](https://github.com/jantimon/reproduction-webpack-import-module-bug/assets/4113649/17735e8e-5b63-4619-ba17-cb378ee73be8)
-
+![error screenshot](https://github.com/jantimon/reproduction-webpack-import-module-bug/assets/4113649/9b92e39b-d4a4-445a-bfd4-de3a4e2652e8)
 
 ## Reason:
 
