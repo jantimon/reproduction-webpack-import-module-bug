@@ -12,7 +12,10 @@ node server.mjs
 
 ## Reason:
 
-As soon as the `package.json` file includes `"type": "module"` `vm.runInThisContext` does not have access to `require` and `module` anymore.
+`./loader.cjs` uses the Webpack loader API `this.importModule` which invokes `vm.runInThisContext` to execute the module code.
+
+However, as soon as the `package.json` file includes `"type": "module"` `vm.runInThisContext` does not have access to `require` and `module` anymore.
+
 
 ## Possible fix:
 
